@@ -1,0 +1,236 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="CourseDetailTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+
+    </style>
+
+    <style name="LessonTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorAccentDark</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+
+    </style>
+
+    <style name="PlayerTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorAccentDark</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+
+    </style>
+
+    <style name="NoteTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+
+    </style>
+
+    <style name="UserNotesTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+
+    </style>
+
+    <style name="ExamTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+
+    </style>
+
+    <style name="AuthTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/changebounds_with_arcmotion
+        </item>
+
+    </style>
+
+    <style name="MainTabStyle" parent="Base.Widget.Design.TabLayout">
+        <item name="tabSelectedTextColor">@color/colorAccent</item>
+        <item name="tabIndicatorColor">@android:color/transparent</item>
+        <item name="tabTextAppearance">@style/MainTabTextStyle</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="MainTabTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/textSizeExtraLarge</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <!--Tilte Text -->
+    <style name="TextTitleLarge" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/md_grey_900</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextTitleMedium" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/md_grey_900</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextTitleSmall" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/md_grey_900</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--Normal Text -->
+    <style name="TextNormalXLarge" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/md_grey_900</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextNormalLarge" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/md_grey_900</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextNormalMedium" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextNormalSmall" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/md_grey_700</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TrackSelectionDialogThemeOverlay" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="windowNoTitle">false</item>
+    </style>
+
+    <!--Awsome icon -->
+    <style name="AwsomeIconSmall" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/md_grey_600</item>
+        <item name="android:width">@dimen/dp_15</item>
+        <item name="android:height">@dimen/dp_15</item>
+    </style>
+
+    <style name="AwsomeIconNormal" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:textColor">@color/md_grey_900</item>
+        <item name="android:width">@dimen/dp_35</item>
+        <item name="android:height">@dimen/dp_35</item>
+    </style>
+
+    <style name="AwsomeIconXXLarge" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_38</item>
+        <item name="android:textColor">@color/md_grey_900</item>
+        <item name="android:width">@dimen/dp_35</item>
+        <item name="android:height">@dimen/dp_35</item>
+    </style>
+
+    <style name="AwsomeIconXLarge" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/md_grey_900</item>
+        <item name="android:width">@dimen/dp_35</item>
+        <item name="android:height">@dimen/dp_35</item>
+    </style>
+
+    <style name="AwsomeIconLarge" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textColor">@color/md_grey_900</item>
+        <item name="android:width">@dimen/dp_35</item>
+        <item name="android:height">@dimen/dp_35</item>
+    </style>
+
+    <style name="StyleTablayout" parent="android:Widget">
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabSelectedTextColor">@color/md_grey_900</item>
+    </style>
+
+    <style name="StyleRoundedRectangle" parent="android:Widget">
+        <item name="rv_cornerRadius_BR">32dp</item>
+        <item name="rv_cornerRadius_TL">32dp</item>
+        <item name="rv_strokeColor">@color/colorPrimary</item>
+        <item name="rv_strokeWidth">1dp</item>
+    </style>
+
+</resources>

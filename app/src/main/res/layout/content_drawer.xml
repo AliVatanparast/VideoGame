@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/modic_dark2">
+
+    <LinearLayout
+        android:id="@+id/lyt_drawer_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lyt_profile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_20">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="@dimen/sp_16"/>
+
+                <vgame.ir.view.component.TextviewCell
+                    android:id="@+id/txt_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="@color/md_grey_400"
+                    android:textSize="@dimen/sp_11"/>
+
+            </LinearLayout>
+
+            <vgame.ir.view.component.CircleImageviewComponent
+                android:id="@+id/img_avatar"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                app:civ_border_color="@color/md_grey_400"
+                app:civ_border_width="@dimen/dp_1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lyt_package_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/epizod_trans_white3"
+            android:gravity="center">
+
+            <vgame.ir.view.component.TextviewCell
+                android:id="@+id/txt_package_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textColor="@color/epizod_trans_white"/>
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_margin="@dimen/dp_10"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="@dimen/dp_15"/>
+
+            <vgame.ir.view.component.TextviewCell
+                android:id="@+id/txt_app_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/md_grey_400"
+                android:textSize="@dimen/sp_12"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

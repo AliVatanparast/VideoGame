@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="lesson"
+            type="vgame.ir.data.local.entity.LessonEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <vgame.ir.view.component.round.RoundLinearLayout
+            android:id="@+id/roundFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rv_backgroundColor="@color/md_grey_400"
+            app:rv_cornerRadius="@dimen/corner_radius_normal">
+
+            <vgame.ir.view.component.AwsomeTextCell
+                android:id="@+id/btn_search"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_gravity="start"
+                android:text="@string/ic_search"
+                android:textColor="@color/md_grey_900"
+                android:textSize="@dimen/sp_28" />
+
+            <vgame.ir.view.component.EditTextCell
+                android:id="@+id/edt_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:gravity="start"
+                android:hint="جستجو ..."
+                android:textColor="@color/md_grey_900"
+                android:textColorHint="@color/md_grey_700" />
+
+        </vgame.ir.view.component.round.RoundLinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@color/colorAccent"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/roundFrameLayout"
+            app:layout_constraintStart_toStartOf="@+id/roundFrameLayout"
+            app:layout_constraintTop_toBottomOf="@+id/roundFrameLayout">
+
+            <vgame.ir.view.component.TextviewCell
+                android:id="@+id/txt_lesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dp_32"
+                android:paddingEnd="@dimen/dp_32"
+                android:text="درس"
+                android:textAppearance="@style/TextNormalXLarge" />
+
+            <vgame.ir.view.component.TextviewCell
+                android:id="@+id/txt_course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dp_32"
+                android:paddingEnd="@dimen/dp_32"
+                android:text="کلاس"
+                android:textAppearance="@style/TextNormalXLarge" />
+
+            <vgame.ir.view.component.TextviewCell
+                android:id="@+id/txt_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dp_32"
+                android:paddingEnd="@dimen/dp_32"
+                android:text="استاد"
+                android:textAppearance="@style/TextNormalXLarge" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

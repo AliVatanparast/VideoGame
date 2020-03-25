@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">رواسی</string>
+
+    <!-- Shared Elements-->
+    <string name="shared_image">sharedimage</string>
+
+    <!-- item history fragment -->
+    <string name="ic_nav">&#xf0c9;</string>
+    <string name="ic_user_circle">&#xf2bd;</string>
+    <string name="ic_search">&#xf002;</string>
+    <string name="ic_home">&#xf80c;</string>
+    <string name="ic_circle">&#xf111;</string>
+    <string name="ic_check_circle">&#xf058;</string>
+    <string name="ic_arrow_left">&#xf060;</string>
+    <string name="ic_arrow_right">&#xf061;</string>
+    <string name="ic_info">&#xf05a;</string>
+    <string name="ic_angle_down">&#xf107;</string>
+    <string name="ic_chevron_up">&#xf077;</string>
+    <string name="ic_play_circle">&#xf144;</string>
+    <string name="ic_save">&#xf0c7;</string>
+    <string name="ic_share">&#xf064;</string>
+    <string name="ic_close">&#xf00d;</string>
+    <string name="ic_file_alt">&#xf15c;</string>
+    <string name="ic_location_arrow">&#xf124;</string>
+    <string name="ic_paper_plane">&#xf1d8;</string>
+    <string name="ic_sign_out">&#xf08b;</string>
+    <string name="ic_download">&#xf34a;</string>
+
+    <string name="ic_bookmark">&#xf02e;</string>
+
+    <string name="ic_word">&#xf1c2;</string>
+    <string name="ic_pdf">&#xf1c1;</string>
+    <string name="ic_video">&#xf3a0;</string>
+    <string name="ic_mp3">&#xf8b6;</string>
+
+    <string name="ic_college_01">&#xf518;</string>
+    <string name="ic_college_02">&#xf5db;</string>
+    <string name="ic_college_03">&#xf5f6;</string>
+    <string name="ic_college_04">&#xf19d;</string>
+    <string name="ic_college_05">&#xf610;</string>
+    <string name="ic_college_06">&#xf618;</string>
+    <string name="ic_college_07">&#xf61f;</string>
+
+    <string name="ic_play">&#xf04b;</string>
+    <string name="ic_pause">&#xf04c;</string>
+    <string name="ic_redo_alt">&#xf2f9;</string>
+    <string name="ic_undo">&#xf0e2;</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="dialog_title">Dialog setup:</string>
+    <string name="footer">Footer</string>
+    <string name="header">Header</string>
+    <string name="header_title">Your title</string>
+    <string name="header_sample">SAMPLE HEADER</string>
+    <string name="footer_button_close">CLOSE</string>
+    <string name="footer_button_confirm">CONFIRM</string>
+    <string name="footer_sample">SAMPLE FOOTER</string>
+    <string name="button_bottom">Bottom</string>
+    <string name="button_center">Center</string>
+    <string name="button_top">Top</string>
+    <string name="google_plus_title">Google Plus</string>
+    <string name="google_maps_title">Maps</string>
+    <string name="google_messenger_title">Messenger</string>
+    <string name="question">Do you like Dialog Plus?</string>
+    <string name="button_like">I like it</string>
+    <string name="button_love">I love it</string>
+    <string name="view_holder">View Holder</string>
+    <string name="list_holder">List Holder</string>
+    <string name="grid_holder">Grid Holder</string>
+    <string name="show_header">Show header</string>
+    <string name="show_footer">Show footer</string>
+
+    <string name="lorem">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</string>
+</resources>

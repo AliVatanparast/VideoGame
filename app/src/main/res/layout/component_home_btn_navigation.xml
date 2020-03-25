@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <vgame.ir.view.component.AwsomeTextCell
+            android:id="@+id/btn_search"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:text="@string/ic_search"
+            android:textSize="@dimen/sp_22" />
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_2"
+            android:layout_height="match_parent"
+            android:background="@color/md_grey_400"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_2"
+            android:layout_height="match_parent"
+            android:background="@color/md_white_1000"/>
+
+        <vgame.ir.view.component.AwsomeTextCell
+            android:id="@+id/btn_profile"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:text="@string/ic_user_circle"
+            android:textSize="@dimen/sp_22" />
+
+    </LinearLayout>
+
+    <vgame.ir.view.component.AwsomeTextCell
+        android:id="@+id/btn_home"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_gravity="center|top"
+        android:background="@drawable/circle_fill_primary"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="@string/ic_home"
+        android:textColor="@color/md_white_1000"
+        android:textSize="@dimen/sp_28" />
+
+</FrameLayout>
