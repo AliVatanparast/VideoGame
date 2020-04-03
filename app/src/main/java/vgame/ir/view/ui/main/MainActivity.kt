@@ -34,4 +34,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), View.OnClickListener {
             return Intent(context, MainActivity::class.java)
         }
     }
+
+
 }

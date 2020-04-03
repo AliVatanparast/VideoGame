@@ -1,6 +1,5 @@
 package vgame.ir.data;
 
-import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 
