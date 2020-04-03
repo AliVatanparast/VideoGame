@@ -24,14 +24,13 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        teacherPagingAdapter = AllGamesPagingAdapter(context, object : AllGamesPagingAdapter.CallBack {
-            override fun onTeacherClick(teacher: AllGamesResponse.Game?, sharedView: View?) {
-
+        teacherPagingAdapter = AllGamesPagingAdapter(context!!, object : AllGamesPagingAdapter.CallBack {
+            override fun onTeacherClick(teacher: AllGamesResponse.Game, sharedView: View) {
             }
 
-            override fun onCourseClick(course: CourseEntity?, sharedView: View?) {
-
+            override fun onCourseClick(course: CourseEntity, sharedView: View) {
             }
+
         })
         dataBinding.rvTechers.adapter = teacherPagingAdapter
 
@@ -40,7 +39,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
            // viewModel.networkState.observe(this, Observer { teacherPagingAdapter!!.setNetworkState(it) })
         })
 
-        viewModel.networkState!!.observe(this, Observer { teacherPagingAdapter!!.setNetworkState(it) })
+        viewModel.networkState!!.observe(this, Observer { teacherPagingAdapter!!.setNetworkState(it!!) })
 
         return dataBinding.root
     }

@@ -21,7 +21,6 @@ import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
 
 @Retention(RetentionPolicy.SOURCE)
-@IntDef(Corner.TOP_LEFT, Corner.TOP_RIGHT, Corner.BOTTOM_LEFT, Corner.BOTTOM_RIGHT)
 annotation class Corner {
     companion object {
         val TOP_LEFT = 0

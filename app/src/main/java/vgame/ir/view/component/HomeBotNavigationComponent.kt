@@ -69,10 +69,10 @@ class HomeBotNavigationComponent(context: Context, attrs: AttributeSet) : Linear
 
         val awsomeTextCell: AwsomeTextCell
         when (position) {
-            0 -> awsomeTextCell = btn_search
-            1 -> awsomeTextCell = btn_home
-            2 -> awsomeTextCell = btn_profile
-            else -> awsomeTextCell = btn_home
+            0 -> awsomeTextCell = btn_search!!
+            1 -> awsomeTextCell = btn_home!!
+            2 -> awsomeTextCell = btn_profile!!
+            else -> awsomeTextCell = btn_home!!
         }
 
         awsomeTextCell.setTextColor(resources.getColor(R.color.md_white_1000))

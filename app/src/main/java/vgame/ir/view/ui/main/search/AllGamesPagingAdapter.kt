@@ -19,7 +19,7 @@ import vgame.ir.databinding.ItemGamesListBinding
 import vgame.ir.databinding.ItemTechersListBinding
 import vgame.ir.databinding.NetworkItemBinding
 
-class AllGamesPagingAdapter protected constructor(private val context: Context, private val callBack: CallBack) : PagedListAdapter<AllGamesResponse.Game, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
+class AllGamesPagingAdapter constructor(private val context: Context, private val callBack: CallBack) : PagedListAdapter<AllGamesResponse.Game, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
 
     private var networkState: Status? = null
 
@@ -101,7 +101,7 @@ class AllGamesPagingAdapter protected constructor(private val context: Context, 
     class TeacherHolder(internal var binding: ItemGamesListBinding, callback: AllGamesPagingAdapter.CallBack) : RecyclerView.ViewHolder(binding.root) {
 
         init {
-            binding.root.setOnClickListener { v -> callback.onTeacherClick(binding.game, binding.imgAvatar) }
+            binding.root.setOnClickListener { v -> callback.onTeacherClick(binding.game!!, binding.imgAvatar) }
         }
 
         fun onBind(teacher: AllGamesResponse.Game?) {

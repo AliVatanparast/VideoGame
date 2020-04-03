@@ -371,7 +371,7 @@ class RoundedImageView : AppCompatImageView {
                     .setBorderWidth(mBorderWidth)
                     .setBorderColor(borderColors)
                     .setOval(mIsOval)
-                    .setTileModeX(tileModeX).tileModeY = tileModeY
+                    .setTileModeX(tileModeX!!).setTileModeX(tileModeY!!)
 
             if (mCornerRadii != null) {
                 drawable.setCornerRadius(

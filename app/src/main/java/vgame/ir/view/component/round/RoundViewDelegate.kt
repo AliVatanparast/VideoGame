@@ -18,7 +18,7 @@ import vgame.ir.R
 class RoundViewDelegate(private val view: View, private val context: Context, attrs: AttributeSet) {
     private val gd_background = GradientDrawable()
     private val gd_background_press = GradientDrawable()
-    private var backgroundColor: Int = 0
+    var backgroundColor: Int? = 0
     private var backgroundPressColor: Int = 0
     var cornerRadius: Int? = 0
     private var cornerRadius_TL: Int = 0
@@ -124,7 +124,7 @@ class RoundViewDelegate(private val view: View, private val context: Context, at
     }
 
     fun getBackgroundColor(): Int {
-        return backgroundColor
+        return backgroundColor!!
     }
 
     fun getBackgroundPressColor(): Int {
@@ -210,15 +210,15 @@ class RoundViewDelegate(private val view: View, private val context: Context, at
         val bg = StateListDrawable()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && isRippleEnable) {
-            setDrawable(gd_background, backgroundColor, strokeColor)
+            setDrawable(gd_background, backgroundColor!!, strokeColor)
             val rippleDrawable = RippleDrawable(
-                    getPressedColorSelector(backgroundColor, backgroundPressColor), gd_background, null)
+                    getPressedColorSelector(backgroundColor!!, backgroundPressColor), gd_background, null)
             view.background = rippleDrawable
         } else {
-            setDrawable(gd_background, backgroundColor, strokeColor)
+            setDrawable(gd_background, backgroundColor!!, strokeColor)
             bg.addState(intArrayOf(-android.R.attr.state_pressed), gd_background)
             if (backgroundPressColor != Integer.MAX_VALUE || strokePressColor != Integer.MAX_VALUE) {
-                setDrawable(gd_background_press, if (backgroundPressColor == Integer.MAX_VALUE) backgroundColor else backgroundPressColor,
+                setDrawable(gd_background_press, if (backgroundPressColor!! == Integer.MAX_VALUE) backgroundColor!! else backgroundPressColor,
                         if (strokePressColor == Integer.MAX_VALUE) strokeColor else strokePressColor)
                 bg.addState(intArrayOf(android.R.attr.state_pressed), gd_background_press)
             }
