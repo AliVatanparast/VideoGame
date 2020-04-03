@@ -1,6 +1,6 @@
 # Android Boilerplate
 
-Sample Android app
+This project is for testing and training new Android technologies.We will be very happy if you cooperate with us in the project.
 
 Libraries and tools included:
 
