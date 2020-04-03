@@ -32,13 +32,13 @@ class YesNoAdapter(private val context: Context, private val strYes: String, pri
         val holder = Holder(view.findViewById(R.id.text_view), view.findViewById(R.id.image_view))
 
         if (i == 0) {
-            holder.textView.text = strYes
+            holder.textView!!.text = strYes
         } else {
-            holder.textView.text = strNo
+            holder.textView!!.text = strNo
         }
 
         return view
     }
 
-    inner class Holder(private val textView: TextView, private val imageView: ImageView)
+    inner class Holder(var textView: TextView, private val imageView: ImageView)
 }

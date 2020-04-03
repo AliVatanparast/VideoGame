@@ -20,7 +20,7 @@ class RoundViewDelegate(private val view: View, private val context: Context, at
     private val gd_background_press = GradientDrawable()
     private var backgroundColor: Int = 0
     private var backgroundPressColor: Int = 0
-    private var cornerRadius: Int = 0
+    var cornerRadius: Int? = 0
     private var cornerRadius_TL: Int = 0
     private var cornerRadius_TR: Int = 0
     private var cornerRadius_BL: Int = 0
@@ -29,8 +29,8 @@ class RoundViewDelegate(private val view: View, private val context: Context, at
     private var strokeColor: Int = 0
     private var strokePressColor: Int = 0
     private var textPressColor: Int = 0
-    private var isRadiusHalfHeight: Boolean = false
-    private var isWidthHeightEqual: Boolean = false
+    var isRadiusHalfHeight: Boolean? = false
+    var isWidthHeightEqual: Boolean? = false
     private var isRippleEnable: Boolean = false
     private val radiusArr = FloatArray(8)
 
@@ -132,7 +132,7 @@ class RoundViewDelegate(private val view: View, private val context: Context, at
     }
 
     fun getCornerRadius(): Int {
-        return cornerRadius
+        return cornerRadius!!
     }
 
     fun getStrokeWidth(): Int {
@@ -152,11 +152,11 @@ class RoundViewDelegate(private val view: View, private val context: Context, at
     }
 
     fun isRadiusHalfHeight(): Boolean {
-        return isRadiusHalfHeight
+        return isRadiusHalfHeight!!
     }
 
     fun isWidthHeightEqual(): Boolean {
-        return isWidthHeightEqual
+        return isWidthHeightEqual!!
     }
 
     fun getCornerRadius_TL(): Int {
@@ -200,7 +200,7 @@ class RoundViewDelegate(private val view: View, private val context: Context, at
             radiusArr[7] = cornerRadius_BL.toFloat()
             gd.cornerRadii = radiusArr
         } else {
-            gd.cornerRadius = cornerRadius.toFloat()
+            gd.cornerRadius = cornerRadius!!.toFloat()
         }
 
         gd.setStroke(strokeWidth, strokeColor)

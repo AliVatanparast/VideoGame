@@ -16,8 +16,8 @@ class ButtonComponent : LinearLayout {
 
     private val icon: String? = null
     private val text: String? = null
-    private val awsomeTextCell: AwsomeTextCell
-    private val textviewCell: TextviewCell
+    private var awsomeTextCell: AwsomeTextCell? = null
+    private var textviewCell: TextviewCell? = null
 
     interface CallBack {
         fun onClick()
@@ -52,9 +52,9 @@ class ButtonComponent : LinearLayout {
         }
 
         if (icon != null) {
-            awsomeTextCell.text = icon
+            awsomeTextCell!!.text = icon
         } else {
-            awsomeTextCell.visibility = View.GONE
+            awsomeTextCell!!.visibility = View.GONE
         }
 
         if (color != 0) {
@@ -62,12 +62,12 @@ class ButtonComponent : LinearLayout {
         }
 
         if (txtColor != 0) {
-            textviewCell.setTextColor(txtColor)
-            awsomeTextCell.setTextColor(txtColor)
+            textviewCell!!.setTextColor(txtColor)
+            awsomeTextCell!!.setTextColor(txtColor)
         }
 
         if (text != null) {
-            textviewCell.text = text
+            textviewCell!!.text = text
         }
 
         a.recycle()

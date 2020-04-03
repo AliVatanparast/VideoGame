@@ -26,7 +26,7 @@ class DescriptionAdapter(private val context: Context, private val title: String
         val uri = Uri.parse(url)
         var notification_artwork: Bitmap? = null
 
-        try {
+        /*try {
             notification_artwork = Glide.with(context)
                     .asBitmap()
                     .load(uri)
@@ -35,7 +35,7 @@ class DescriptionAdapter(private val context: Context, private val title: String
             if (t is ExecutionException) {
                 t = t.cause
             }
-        }
+        }*/
 
         return notification_artwork
     }

@@ -41,7 +41,6 @@ class AppLoader : Application(), HasActivityInjector {
     }
 
     companion object {
-        var user : UserResponse? =null
         lateinit var instance: AppLoader
         var currentActivity: AppCompatActivity? = null
     }

@@ -94,7 +94,7 @@ class ExoUtils {
         if (databaseProvider == null) {
             databaseProvider = ExoDatabaseProvider(AppLoader.instance)
         }
-        return databaseProvider
+        return databaseProvider!!
     }
 
     private fun getDownloadDirectory(): File? {
@@ -113,7 +113,7 @@ class ExoUtils {
             val downloadContentDirectory = File(getDownloadDirectory(), DOWNLOAD_CONTENT_DIRECTORY)
             downloadCache = SimpleCache(downloadContentDirectory, NoOpCacheEvictor(), getDatabaseProvider())
         }
-        return downloadCache
+        return downloadCache!!
     }
 
     private fun upgradeActionFile(
@@ -162,15 +162,15 @@ class ExoUtils {
         private val DOWNLOAD_CONTENT_DIRECTORY = "downloads"
         var downloadCache: Cache? = null
 
-        var userAgent: String
+        lateinit var userAgent: String
 
-        var app_player: SimpleExoPlayer
+        lateinit var app_player: SimpleExoPlayer
 
         private var defaultBandwidthMeter: DefaultBandwidthMeter? = null
         private var videoTrackSelectionFactory: TrackSelection.Factory? = null
         private var trackSelector: DefaultTrackSelector? = null
-        var extractorsFactory: ExtractorsFactory
-        var dateSourceFactory: DataSource.Factory
+        lateinit var extractorsFactory: ExtractorsFactory
+        lateinit var dateSourceFactory: DataSource.Factory
 
         fun getInstance(context: Context): ExoUtils {
             if (instance == null) {
@@ -194,7 +194,7 @@ class ExoUtils {
                 dateSourceFactory = DefaultDataSourceFactory(context, userAgent, defaultBandwidthMeter)
 
             }
-            return instance
+            return instance!!
         }
 
         protected fun buildReadOnlyCacheDataSource(

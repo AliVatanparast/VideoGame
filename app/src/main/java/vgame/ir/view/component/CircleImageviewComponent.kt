@@ -20,6 +20,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.AppCompatImageView
 import android.util.AttributeSet
+import android.widget.ImageView
 
 import vgame.ir.R
 

@@ -41,7 +41,7 @@ class DemoDownloadService : DownloadService(FOREGROUND_NOTIFICATION_ID, Download
     }
 
     override fun getDownloadManager(): DownloadManager {
-        return ExoUtils.getInstance(this).getDownloadManager()
+        return ExoUtils.getInstance(this).getDownloadManager()!!
     }
 
     override fun getScheduler(): PlatformScheduler? {

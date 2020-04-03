@@ -2,6 +2,7 @@ package vgame.ir.view.component.round
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
 import android.widget.FrameLayout
 
 class RoundFrameLayout @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : FrameLayout(context, attrs) {
@@ -11,11 +12,11 @@ class RoundFrameLayout @JvmOverloads constructor(context: Context, attrs: Attrib
     val delegate: RoundViewDelegate
 
     init {
-        delegate = RoundViewDelegate(this, context, attrs)
+        delegate = RoundViewDelegate(this, context, attrs!!)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        if (delegate.isWidthHeightEqual && width > 0 && height > 0) {
+        if (delegate.isWidthHeightEqual!! && width > 0 && height > 0) {
             val max = Math.max(width, height)
             val measureSpec = View.MeasureSpec.makeMeasureSpec(max, View.MeasureSpec.EXACTLY)
             super.onMeasure(measureSpec, measureSpec)
@@ -27,7 +28,7 @@ class RoundFrameLayout @JvmOverloads constructor(context: Context, attrs: Attrib
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
-        if (delegate.isRadiusHalfHeight) {
+        if (delegate.isRadiusHalfHeight!!) {
             delegate.cornerRadius = height / 2
         } else {
             delegate.setBgSelector()
