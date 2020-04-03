@@ -4,21 +4,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    signingConfigs {
-        release {
-            storeFile file('D:\\Keystore\\Ravasi\\ravasi.jks')
-            storePassword 'aaaaaa'
-            keyPassword 'aaaaaa'
-            keyAlias = 'ravasi'
-        }
-    }
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
-        applicationId "ravasi.ir"
+        applicationId "vgame.ir"
         minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1010
-        versionName "1.010"
+        targetSdkVersion 29
+        versionCode 11010
+        versionName "1.10.10"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         javaCompileOptions {
@@ -37,7 +29,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
 
