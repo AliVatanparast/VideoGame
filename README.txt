@@ -1,1 +1,1 @@
-ss
+Sample Android app
