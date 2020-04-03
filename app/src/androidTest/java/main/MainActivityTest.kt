@@ -35,8 +35,5 @@ class MainActivityTest {
 
         Espresso.onView(withId(R.id.btn_profile))
                 .perform(ViewActions.click())
-
-        Espresso.onView(withId(R.id.txt_tiket))
-                .check(matches(isDisplayed()))
     }
 }
