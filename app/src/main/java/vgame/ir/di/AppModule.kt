@@ -7,12 +7,11 @@ import dagger.Provides
 import okhttp3.OkHttpClient
 import vgame.ir.data.local.Migrations
 import vgame.ir.data.local.RavasiDatabase
-import vgame.ir.data.local.dao.RavasiDao
+import vgame.ir.data.local.dao.AppDao
 import vgame.ir.data.remote.ApiConstants
 import vgame.ir.data.remote.RavasiDBService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import vgame.ir.data.AppRepository
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -52,7 +51,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    internal fun provideRavasiDao(ravasiDatabase: RavasiDatabase): RavasiDao {
+    internal fun provideRavasiDao(ravasiDatabase: RavasiDatabase): AppDao {
         return ravasiDatabase.ravasiDao()
     }
 }

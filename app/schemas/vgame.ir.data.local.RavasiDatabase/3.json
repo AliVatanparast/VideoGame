@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 3,
-    "identityHash": "a11eed78dd15d21c1d0c20e284b9411c",
+    "identityHash": "7b4e9c6e6d5b76345280e348c6843898",
     "entities": [
       {
         "tableName": "banner",
@@ -128,7 +128,7 @@
       },
       {
         "tableName": "course",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `category_id` INTEGER NOT NULL, `name` TEXT, `description` TEXT, `url` TEXT, `bookmark` INTEGER NOT NULL, `teacher_id` TEXT, `teacher_name` TEXT, `members_count` INTEGER, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `uni_id` INTEGER NOT NULL, `name` TEXT, `description` TEXT, `url` TEXT, `isBookmark` INTEGER NOT NULL, `teacher_id` TEXT, `teacher_name` TEXT, `members_count` INTEGER, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -137,8 +137,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "category_id",
-            "columnName": "category_id",
+            "fieldPath": "uni_id",
+            "columnName": "uni_id",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -161,8 +161,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "bookmark",
-            "columnName": "bookmark",
+            "fieldPath": "isBookmark",
+            "columnName": "isBookmark",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -424,7 +424,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a11eed78dd15d21c1d0c20e284b9411c')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7b4e9c6e6d5b76345280e348c6843898')"
     ]
   }
 }

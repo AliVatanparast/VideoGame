@@ -24,14 +24,14 @@ public final class ListBindingAdapter {
             return;
         }*/
 
-        if(resource.data == null){
+        if(resource.getData() == null){
             return;
         }
 
        // recyclerView.setVisibility(View.VISIBLE);
 
         if (adapter instanceof BaseAdapter) {
-            ((BaseAdapter) adapter).setData((List) resource.data);
+            ((BaseAdapter) adapter).setData((List) resource.getData());
         }
     }
 }

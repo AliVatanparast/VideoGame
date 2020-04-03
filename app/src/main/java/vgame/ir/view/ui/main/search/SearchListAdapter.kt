@@ -83,10 +83,10 @@ class SearchListAdapter(var callback: Callback) : BaseAdapter<RecyclerView.ViewH
 
     class CourseViewHolder(var callback: Callback,var binding: ItemSearchCourseListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(item: Course) {
-            binding.txtTitle.text = colorString(item.title+"", item.hight_light)
-            binding.txtDescription.text = colorString(item.description+"", item.hight_light)
+            binding.txtTitle.text = colorString(item.title+"", item.hight_light.toString())
+            binding.txtDescription.text = colorString(item.description+"", item.hight_light.toString())
             try {
-                binding.image = item.attachments.get(0).absoluteUrl.replace("attachments/courses/" , "")
+                binding.image = item.attachments!!.get(0).absoluteUrl!!.replace("attachments/courses/" , "")
             }catch (e:Exception){}
 
             binding.root.setOnClickListener {
@@ -127,9 +127,9 @@ class SearchListAdapter(var callback: Callback) : BaseAdapter<RecyclerView.ViewH
 
     class TeacherHolder(var callback: Callback,var binding: ItemSearchTeacherListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(item: CoursesResponse.Teacher) {
-            binding.txtName.text = colorString(item.fullName, item.hight_light)
-            binding.txtDescription.text = colorString(item.description, item.hight_light)
-            binding.avatar = item.avatarUrl.replace("attachments/teachers/" , "")
+            binding.txtName.text = colorString(item.fullName!!, item.hight_light!!)
+            binding.txtDescription.text = colorString(item.description!!, item.hight_light!!)
+            binding.avatar = item.avatarUrl!!.replace("attachments/teachers/" , "")
             binding.root.setOnClickListener {
                 callback.onClicked(item)
             }
@@ -169,8 +169,8 @@ class SearchListAdapter(var callback: Callback) : BaseAdapter<RecyclerView.ViewH
 
     class LessonViewHolder(var callback: Callback,var binding: ItemSearchLessonListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(item: LessonDetailResponse.Session) {
-            binding.txtTitle.text = colorString(item.title + "", item.hight_light)
-            binding.txtDescription.text = colorString(item.description + "", item.hight_light)
+            binding.txtTitle.text = colorString(item.title + "", item.hight_light!!)
+            binding.txtDescription.text = colorString(item.description + "", item.hight_light!!)
 
             binding.root.setOnClickListener {
                 callback.onClicked(item)

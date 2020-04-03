@@ -31,12 +31,12 @@ public abstract class NetworkRequest<ResultType> {
 
     @MainThread
     public NetworkRequest() {
-        result.setValue(Resource.loading(null));
+        result.setValue(Resource.Companion.loading(null));
         createCall().enqueue(new Callback<ResultType>() {
             @Override
             public void onResponse(Call<ResultType> call, Response<ResultType> response) {
                 if (response.isSuccessful()) {
-                    result.setValue(Resource.success(response.body()));
+                    result.setValue(Resource.Companion.success(response.body()));
                 } else {
                     if (response.code() == 401) {
                         UserInfo.INSTANCE.setToken("");
@@ -44,14 +44,14 @@ public abstract class NetworkRequest<ResultType> {
                         AppLoader.Companion.getCurrentActivity().finish();
 
                     }
-                    result.setValue(Resource.error(response.message(), null));
+                    result.setValue(Resource.Companion.error(response.message(), null));
                 }
             }
 
             @Override
             public void onFailure(Call<ResultType> call, Throwable t) {
                 onFetchFailed();
-                result.setValue(Resource.error(t.getMessage(), null));
+                result.setValue(Resource.Companion.error(t.getMessage(), null));
             }
         });
     }

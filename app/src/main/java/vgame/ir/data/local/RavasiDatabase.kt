@@ -2,7 +2,7 @@ package vgame.ir.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import vgame.ir.data.local.dao.RavasiDao
+import vgame.ir.data.local.dao.AppDao
 import vgame.ir.data.local.entity.*
 
 @Database(entities = [
@@ -19,5 +19,5 @@ import vgame.ir.data.local.entity.*
         version = 3, exportSchema = true)
 abstract class RavasiDatabase : RoomDatabase() {
 
-    abstract fun ravasiDao(): RavasiDao
+    abstract fun ravasiDao(): AppDao
 }

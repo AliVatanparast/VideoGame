@@ -13,7 +13,7 @@ public abstract class DatabaseRequest<ResultType> {
 
     @MainThread
     public DatabaseRequest() {
-        result.setValue(Resource.loading(null));
+        result.setValue(Resource.Companion.loading(null));
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -23,7 +23,7 @@ public abstract class DatabaseRequest<ResultType> {
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                result.setValue(Resource.success(null));
+                result.setValue(Resource.Companion.success(null));
             }
         }.execute();
     }

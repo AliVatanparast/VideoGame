@@ -48,7 +48,7 @@ class GamesDataSource(var appRepository: AppRepository?) : PageKeyedDataSource<I
             }
         }*/
 
-        val service = RetrofitClientInstance.getRetrofitInstance().create(RavasiDBService::class.java)
+        val service = RetrofitClientInstance.retrofitInstance.create(RavasiDBService::class.java)
         val call = service.getGames("31fe7e5d1fmshc60893bba43f309p1387c1jsnb55d512f479e", FIRST_PAGE.toString() + "")
         call.enqueue(object : Callback<AllGamesResponse> {
             override fun onResponse(call: Call<AllGamesResponse>, response: Response<AllGamesResponse>) {
@@ -74,7 +74,7 @@ class GamesDataSource(var appRepository: AppRepository?) : PageKeyedDataSource<I
     override fun loadBefore(params: PageKeyedDataSource.LoadParams<Int>, callback: PageKeyedDataSource.LoadCallback<Int, AllGamesResponse.Game>) {
         networkState.postValue(Status.LOADING)
 
-        val service = RetrofitClientInstance.getRetrofitInstance().create(RavasiDBService::class.java)
+        val service = RetrofitClientInstance.retrofitInstance.create(RavasiDBService::class.java)
         val call = service.getGames("31fe7e5d1fmshc60893bba43f309p1387c1jsnb55d512f479e", params.key.toString() + "")
         call.enqueue(object : Callback<AllGamesResponse> {
             override fun onResponse(call: Call<AllGamesResponse>, response: Response<AllGamesResponse>) {
@@ -97,7 +97,7 @@ class GamesDataSource(var appRepository: AppRepository?) : PageKeyedDataSource<I
 
     override fun loadAfter(params: PageKeyedDataSource.LoadParams<Int>, callback: PageKeyedDataSource.LoadCallback<Int, AllGamesResponse.Game>) {
         networkState.postValue(Status.LOADING)
-        val service = RetrofitClientInstance.getRetrofitInstance().create(RavasiDBService::class.java)
+        val service = RetrofitClientInstance.retrofitInstance.create(RavasiDBService::class.java)
         val call = service.getGames("31fe7e5d1fmshc60893bba43f309p1387c1jsnb55d512f479e", params.key.toString() + "")
         call.enqueue(object : Callback<AllGamesResponse> {
             override fun onResponse(call: Call<AllGamesResponse>, response: Response<AllGamesResponse>) {

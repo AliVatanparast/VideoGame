@@ -17,7 +17,7 @@ public abstract class NetworkBoundResource<ResultType, RequestType> {
 
     @MainThread
     NetworkBoundResource() {
-        result.setValue(Resource.loading(null));
+        result.setValue(Resource.Companion.loading(null));
         LiveData<ResultType> dbSource = loadFromDb();
 
         //for models that is MediatorLiveData when db is empty and loadFromDb
@@ -33,13 +33,13 @@ public abstract class NetworkBoundResource<ResultType, RequestType> {
             if (shouldFetch(data)) {
                 fetchFromNetwork(dbSource);
             } else {
-                result.addSource(dbSource, newData -> result.setValue(Resource.success(newData)));
+                result.addSource(dbSource, newData -> result.setValue(Resource.Companion.success(newData)));
             }
         });
     }
 
     private void fetchFromNetwork(final LiveData<ResultType> dbSource) {
-        result.addSource(dbSource, newData -> result.setValue(Resource.loading(newData)));
+        result.addSource(dbSource, newData -> result.setValue(Resource.Companion.loading(newData)));
         createCall().enqueue(new Callback<RequestType>() {
             @Override
             public void onResponse(Call<RequestType> call, Response<RequestType> response) {
@@ -51,7 +51,7 @@ public abstract class NetworkBoundResource<ResultType, RequestType> {
             public void onFailure(Call<RequestType> call, Throwable t) {
                 onFetchFailed();
                 result.removeSource(dbSource);
-                result.addSource(dbSource, newData -> result.setValue(Resource.error(t.getMessage(), newData)));
+                result.addSource(dbSource, newData -> result.setValue(Resource.Companion.error(t.getMessage(), newData)));
             }
         });
     }
@@ -68,7 +68,7 @@ public abstract class NetworkBoundResource<ResultType, RequestType> {
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                result.addSource(loadFromDb(), newData -> result.setValue(Resource.success(newData)));
+                result.addSource(loadFromDb(), newData -> result.setValue(Resource.Companion.success(newData)));
             }
         }.execute();
     }
