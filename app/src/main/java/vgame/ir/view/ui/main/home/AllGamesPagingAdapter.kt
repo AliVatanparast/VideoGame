@@ -1,20 +1,17 @@
 package vgame.ir.view.ui.main.home
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-
 import vgame.ir.data.Status
-import vgame.ir.data.local.entity.CourseEntity
 import vgame.ir.data.remote.model.AllGamesResponse
 import vgame.ir.databinding.ItemGamesListBinding
 import vgame.ir.databinding.NetworkItemBinding
 
-class AllGamesPagingAdapter constructor(private val context: Context, private val callBack: CallBack) : PagedListAdapter<AllGamesResponse.Game, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
+class AllGamesPagingAdapter constructor(private val callBack: CallBack) : PagedListAdapter<AllGamesResponse.Game, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
 
     private var networkState: Status? = null
 

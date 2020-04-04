@@ -24,14 +24,14 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(), AllGame
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-       initGamesRecyclerView()
+        initGamesRecyclerView()
 
         return dataBinding.root
     }
-    
-    fun initGamesRecyclerView(){
-        gamesPagingAdapter = AllGamesPagingAdapter(context!!, this)
-        rv_games.adapter = gamesPagingAdapter
+
+    fun initGamesRecyclerView() {
+        gamesPagingAdapter = AllGamesPagingAdapter(this)
+        dataBinding.rvGames.adapter = gamesPagingAdapter
 
         viewModel.postsLiveData.observe(viewLifecycleOwner, Observer {
             gamesPagingAdapter.submitList(it)
