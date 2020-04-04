@@ -6,7 +6,7 @@ import vgame.ir.data.prefrence.UserInfo
 import javax.inject.Inject
 
 class MainViewModel @Inject
-constructor(private val ravasiRepository: AppRepository) : ViewModel() {
+constructor(private val repository: AppRepository) : ViewModel() {
 
     fun logout(): Boolean {
         UserInfo.token = ""

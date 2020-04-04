@@ -1,4 +1,4 @@
-package vgame.ir.view.ui.main.search
+package vgame.ir.view.ui.main.home
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator

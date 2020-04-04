@@ -1,4 +1,4 @@
-package vgame.ir.view.ui.main.search
+package vgame.ir.view.ui.main.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,6 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import androidx.paging.DataSource
 import androidx.paging.LivePagedListBuilder
-import androidx.paging.PageKeyedDataSource
 import androidx.paging.PagedList
 
 import javax.inject.Inject
@@ -15,7 +14,6 @@ import vgame.ir.data.AppRepository
 import vgame.ir.data.Status
 import vgame.ir.data.datasource.chat.GamesDataSource
 import vgame.ir.data.remote.model.AllGamesResponse
-import vgame.ir.data.remote.model.ChatMessage
 
 class HomeViewModel @Inject
 constructor(private val repository: AppRepository) : ViewModel() {
@@ -25,7 +23,7 @@ constructor(private val repository: AppRepository) : ViewModel() {
 
     init {
         val config = PagedList.Config.Builder()
-                .setPageSize(30)
+                .setPageSize(20)
                 .setEnablePlaceholders(false)
                 .build()
         postsLiveData = initializedPagedListBuilder(config).build()

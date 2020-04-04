@@ -1,4 +1,4 @@
-package vgame.ir.view.ui.main.search
+package vgame.ir.view.ui.main.home
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,15 +8,10 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-import vgame.ir.data.ModelConvertor
 import vgame.ir.data.Status
 import vgame.ir.data.local.entity.CourseEntity
-import vgame.ir.data.model.Teacher
 import vgame.ir.data.remote.model.AllGamesResponse
-import vgame.ir.data.remote.model.SearchModel
-import vgame.ir.databinding.ItemCourseListBinding
 import vgame.ir.databinding.ItemGamesListBinding
-import vgame.ir.databinding.ItemTechersListBinding
 import vgame.ir.databinding.NetworkItemBinding
 
 class AllGamesPagingAdapter constructor(private val context: Context, private val callBack: CallBack) : PagedListAdapter<AllGamesResponse.Game, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
@@ -24,9 +19,7 @@ class AllGamesPagingAdapter constructor(private val context: Context, private va
     private var networkState: Status? = null
 
     interface CallBack {
-        fun onTeacherClick(teacher: AllGamesResponse.Game, sharedView: View)
-
-        fun onCourseClick(course: CourseEntity, sharedView: View)
+        fun onGameClick(game: AllGamesResponse.Game, sharedView: View)
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): RecyclerView.ViewHolder {
@@ -35,12 +28,12 @@ class AllGamesPagingAdapter constructor(private val context: Context, private va
             val headerBinding = NetworkItemBinding.inflate(layoutInflater, viewGroup, false)
             return NetworkStateItemViewHolder(headerBinding)
         } else {
-            return TeacherHolder.create(LayoutInflater.from(viewGroup.context), viewGroup, callBack)
+            return VGamesHolder.create(LayoutInflater.from(viewGroup.context), viewGroup, callBack)
         }
     }
 
     override fun onBindViewHolder(itemHolder: RecyclerView.ViewHolder, i: Int) {
-        if (itemHolder is TeacherHolder) {
+        if (itemHolder is VGamesHolder) {
             val searchModel = getItem(i)
             itemHolder.onBind(searchModel)
         } else {
@@ -98,22 +91,22 @@ class AllGamesPagingAdapter constructor(private val context: Context, private va
         }
     }
 
-    class TeacherHolder(internal var binding: ItemGamesListBinding, callback: AllGamesPagingAdapter.CallBack) : RecyclerView.ViewHolder(binding.root) {
+    class VGamesHolder(internal var binding: ItemGamesListBinding, callback: CallBack) : RecyclerView.ViewHolder(binding.root) {
 
         init {
-            binding.root.setOnClickListener { v -> callback.onTeacherClick(binding.game!!, binding.imgAvatar) }
+            binding.root.setOnClickListener { v -> callback.onGameClick(binding.game!!, binding.imgAvatar) }
         }
 
-        fun onBind(teacher: AllGamesResponse.Game?) {
-            binding.game = teacher
+        fun onBind(game: AllGamesResponse.Game?) {
+            binding.game = game
             binding.executePendingBindings()
         }
 
         companion object {
 
-            fun create(inflater: LayoutInflater, parent: ViewGroup, callback: AllGamesPagingAdapter.CallBack): TeacherHolder {
+            fun create(inflater: LayoutInflater, parent: ViewGroup, callback: CallBack): VGamesHolder {
                 val inflate = ItemGamesListBinding.inflate(inflater, parent, false)
-                return TeacherHolder(inflate, callback)
+                return VGamesHolder(inflate, callback)
             }
         }
     }

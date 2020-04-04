@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import vgame.ir.view.ui.main.MainViewModel
-import vgame.ir.view.ui.main.search.HomeViewModel
+import vgame.ir.view.ui.main.home.HomeViewModel
 import vgame.ir.viewmodel.RavasiViewModelFactory
 
 @Module
